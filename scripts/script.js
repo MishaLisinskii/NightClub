@@ -124,6 +124,8 @@ question.forEach(element=>{
             answerBlock.style.display = 'inline-block';
             answerBlock.style.position = 'absolute';
             answerBlock.style.bottom = '0';
+            answerBlock.style.zIndex = '-1';
+            answerBlock.style.transform = 'translateY(20%)';
             answerBlock.style.transition = 'all 1s ease';
             requestAnimationFrame(()=>{
                 answerBlock.style.transform = 'translateY(100%)';
@@ -138,7 +140,7 @@ question.forEach(element=>{
             answerBlock.style.transform = 'translateY(0%)';
             setTimeout(()=>{
                 answerBlock.style.display = 'none';
-            }, 200)
+            }, 500)
             element.classList.add('answerClose');
             btn.classList.remove('animationVectorUp');
             btn.classList.add('animationVectorDown');
