@@ -114,6 +114,9 @@ header > div{
 .dropMenu button:active{
     transform: scale(1);
 }
+.burger_button{
+    display: none;
+}
 
 
 /* .burger_button{
