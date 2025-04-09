@@ -1,5 +1,5 @@
 // ============ Функции ============
-// Для радиоКнопок
+// Для радиоКнопок ==========
 function nextRadio(){
     document.querySelector(`#r${countR}`).removeAttribute('checked','checked');
     countR = (countR % totalR) + 1;
@@ -14,7 +14,7 @@ function prevRadio(){
     countSpan = (countSpan - 2 + totalR) % totalR + 1;
     countTextRadio.textContent = countSpan;
 }
-// Для Слайдера
+// Для Слайдера ==========
 function nextSlide(){
     selectSlide = (selectSlide % totalSlides) + 1;
     translateValue = (selectSlide - 1) * -16.7 + '%';
@@ -23,30 +23,38 @@ function prevSlide(){
     selectSlide = (selectSlide - 2 + totalSlides) % totalSlides + 1;
     translateValue = (selectSlide - 1) * -16.7 + '%';
 }
-// Для СлайдераСкриншотов
+// Для СлайдераСкриншотов ==========
 function nextScreen(){
     selectScreen = (selectScreen % totalList) + 1;
     translateScreenValue = (selectScreen - 1) * -20 + '%';
+    if(maxWidth700.matches){
+        translateScreenValue = (selectScreen - 1) * -30 + '%';
+        totalList = 11;
+    }
 }
 function prevScreen(){
     selectScreen = (selectScreen - 2 + totalList) % totalList + 1;
     translateScreenValue = (selectScreen - 1) * -20 + '%';
+    if(maxWidth700.matches){
+        translateScreenValue = (selectScreen - 1) * -30 + '%';
+        totalList = 11;
+    }
 }
 // ============ Переменные ============
-// Для РадиоКнопок
+// Для РадиоКнопок ==========
 let countSpan = 1;
 let countR = 1;
 let totalR = 6;
-// Для Слайдера
+// Для Слайдера ========== 
 let translateValue = null;
 let totalSlides = 6;
 let selectSlide = 1;
-// Для Скрнишотов
+// Для Скрнишотов ==========
 let translateScreenValue = null;
 let totalList = 4;
 let selectScreen = 1;
 let clickedScren = null;
-// Для ответов
+// Для ответов ==========
 let clickedCount = null;
 
 // ============Переменные-ДомСтруктуры ============
@@ -61,8 +69,13 @@ const screenShotsBlock = document.querySelector('.screenPhone');
 const screenShots = document.querySelectorAll('.screnshots-block > img');
 const question = document.querySelectorAll('.question');
 const answer = document.querySelectorAll('.answer');
+const burgerButton = document.querySelector('#burgerButton');
+const dropMenu = document.querySelector('.dropMenu');
+const renatageMap = document.querySelector('#renatageMap');
+// Медиа параметры ==========
+let maxWidth700 = window.matchMedia('(max-width: 700px)');
 // ============ Прослушки Событий ============
-// Кнопки переключения слайдов
+// Кнопки переключения слайдов ==========
 buttonNext.addEventListener('click', ()=>{
     nextRadio();
     nextSlide()
@@ -79,7 +92,7 @@ buttonPrev.addEventListener('click', ()=>{
     sliderRoom.style.transition = 'all .3s ease'
     sliderInfo.style.transition = 'all .3s ease'
 })
-// Кнопки переключения Скриншотов
+// Кнопки переключения Скриншотов ==========
 buttonScreenNext.addEventListener('click', ()=>{
     nextScreen();
     screenShotsBlock.style.transform = `translate(${translateScreenValue})`
@@ -90,7 +103,7 @@ buttonScreenPrev.addEventListener('click', ()=>{
     screenShotsBlock.style.transform = `translate(${translateScreenValue})`
 
 })
-// Увелечение Скриншота
+// Увелечение Скриншота ==========
 screenShots.forEach(element => {
     element.addEventListener('click', () =>{
         const clicked = element;
@@ -112,9 +125,9 @@ screenShots.forEach(element => {
         }  
     })
 });
-// animationVectorDown
 
-// Открытие блока ответа
+
+// Открытие блока ответа ==========
 question.forEach(element=>{
     element.addEventListener('click',()=>{
         const btn = element.querySelector('button img');
@@ -148,4 +161,29 @@ question.forEach(element=>{
         }
     })
 })
-
+burgerButton.addEventListener('click', ()=>{
+    clickedCount++
+    if(clickedCount === 1){
+        burgerButton.classList.remove('animationVectorBack');
+        burgerButton.classList.add('animationVectorScroll');
+        document.querySelector('#up').style.backgroundColor = '#282B32';
+        document.querySelector('#up').style.transition = 'background-color 1s linear';
+        dropMenu.style.display = 'inline-block';
+        dropMenu.style.transition= 'all 1s linear';
+        requestAnimationFrame(()=>{
+            dropMenu.style.transform = 'translateX(0)';
+        })
+        burgerButton.dataset.clickedButton = true;
+    }
+    if(clickedCount === 2){
+        burgerButton.classList.remove('animationVectorScroll');
+        burgerButton.classList.add('animationVectorBack');
+        document.querySelector('#up').style.backgroundColor = '';
+        dropMenu.style.transform = '';
+        setTimeout(()=>{
+            dropMenu.style.display = 'none'
+        },1000)
+        burgerButton.dataset.clickedButton = false;
+        clickedCount = null;
+    }
+})
