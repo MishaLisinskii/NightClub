@@ -28,16 +28,16 @@ function nextScreen(){
     selectScreen = (selectScreen % totalList) + 1;
     translateScreenValue = (selectScreen - 1) * -20 + '%';
     if(maxWidth700.matches){
-        translateScreenValue = (selectScreen - 1) * -30 + '%';
-        totalList = 11;
+        translateScreenValue = (selectScreen - 1) * -35 + '%';
+        totalList = 10;
     }
 }
 function prevScreen(){
     selectScreen = (selectScreen - 2 + totalList) % totalList + 1;
     translateScreenValue = (selectScreen - 1) * -20 + '%';
     if(maxWidth700.matches){
-        translateScreenValue = (selectScreen - 1) * -30 + '%';
-        totalList = 11;
+        translateScreenValue = (selectScreen - 1) * -20 + '%';
+        totalList = 15;
     }
 }
 // ============ Переменные ============
