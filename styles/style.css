@@ -71,6 +71,52 @@ header > div{
 .header_button a button:active{
     transform: scale(1);
 }
+
+.dropMenu{
+    position: absolute;
+    display: none;
+    transform: translateX(-100%);
+    background-color: #282B32;
+}
+.dropMenu > div{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.dropMenu > div:first-child{
+    color: #F69020;
+}
+    .dropMenu button{
+    margin-bottom: 1rem;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    font-weight: 400;
+    font-size: 1em;
+    background-color: #191b2000;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.500);
+    text-transform: uppercase;
+}
+
+.dropMenu button:last-child{
+    background-color: white;
+    color: black;
+}
+
+.dropMenu button:hover{
+    transition: all .2s linear;
+    transform: scale(1.1);
+}
+.dropMenu button:active{
+    transform: scale(1);
+}
+
+
+/* .burger_button{
+    padding-top: .8rem;
+} */
 /* ======================== */
 /* Первая секция */
 .first-section{
@@ -176,8 +222,8 @@ header > div{
     align-items: center;
     display: flex;
     background-color: #282B32;
-    width: 480px;
-    height: 130px;
+    width: 30rem;
+    height: 8.1rem;
 
 }
 
@@ -342,9 +388,9 @@ input#r6:checked ~ .two-section_navigation label[for='r6']{
     background-color: #282C34;
 }
 
-.advantages > .block-adv:nth-child(2),
-.advantages > .block-adv:nth-child(4),
-.advantages > .block-adv:nth-child(6){
+.block-adv:nth-child(2),
+.block-adv:nth-child(4),
+.block-adv:nth-child(6){
     background-color:#202124;
 }
 
@@ -549,13 +595,6 @@ input#r6:checked ~ .two-section_navigation label[for='r6']{
     box-shadow: 1px 1px 4px 1px rgb(32, 32, 32, .8) ;
 }
 
-.animationVectorUp{
-    animation: vectorInUp .5s ease  1 forwards;
-}
-.animationVectorDown{
-    animation: vectorInDown .5s ease  1 forwards;
-}
-
 /* ======================== */
 
 /* ======================== */
@@ -567,7 +606,6 @@ footer{
 .footer-elements{
     position: relative;
     display: flex;
-    height: 200px;
     justify-content: space-between;
     align-items: center;
     padding: 0 12.5rem 0 3.4rem;
@@ -593,7 +631,7 @@ footer{
     align-items: center;
     gap: 1rem;
 }
-
+/* ======================== */
 .text-image{
     position: absolute;
     top: 0;
@@ -660,7 +698,21 @@ footer{
 }
 /* ======================== */
 
+
 /* ======================== */
+.animationVectorUp{
+    animation: vectorInUp .5s ease  1 forwards;
+}
+.animationVectorDown{
+    animation: vectorInDown .5s ease  1 forwards;
+}
+.animationVectorScroll{
+    animation: vectorMoreScroll 1s ease 1 forwards;
+}
+.animationVectorBack{
+    animation: vectorMoreScrollback 1s ease 1 forwards;
+}
+
 @keyframes vectorInUp{
     0%{
         transform: rotate(0deg);
@@ -676,6 +728,24 @@ footer{
     }
     100%{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes vectorMoreScroll {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(316deg);
+    }
+}
+
+@keyframes vectorMoreScrollback {
+    0%{
+        transform: rotate(316deg);
+    }
+    100%{
+        transform: rotate(0deg);
     }
 }
 /* ======================== */
