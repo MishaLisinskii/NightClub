@@ -2,6 +2,8 @@ body{
     background-color: #1C1E23;
     color: white;
     overflow-x: hidden;
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
 }
 
 .container{
@@ -606,6 +608,7 @@ footer{
 .footer-elements{
     position: relative;
     display: flex;
+    height: 10vw;
     justify-content: space-between;
     align-items: center;
     padding: 0 12.5rem 0 3.4rem;

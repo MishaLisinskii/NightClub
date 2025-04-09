@@ -134,7 +134,7 @@
 
     /* ================== */
     .ourAdvantages{
-        padding-left: 15%;
+        padding-left: 10%;
     }
     .Advantages-info>h2 {
         font-size: 2.25rem;
@@ -285,6 +285,7 @@
     /* ================== */
     .footer-elements {
         display: block;
+        height: 60vw;
     }
 
     .footer-elements>img {
