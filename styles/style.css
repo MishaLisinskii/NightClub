@@ -584,7 +584,7 @@ input#r6:checked ~ .two-section_navigation label[for='r6']{
 
 .answerOpen{
     transition: margin-bottom 0.5s ease-in-out;
-    margin-bottom: 6rem;
+    margin-bottom: 9rem;
 }
 .answerClose{
     margin-bottom: 1.25rem;

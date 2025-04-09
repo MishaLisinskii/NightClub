@@ -285,6 +285,7 @@
 
     /* ================== */
     .footer-elements {
+        font-size: 13px;
         display: block;
         height: 60vw;
     }
