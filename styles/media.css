@@ -1,0 +1,149 @@
+@media (max-width: 700px) {
+/* ================== */
+    .header_button,
+    .header_number-gps>div:first-child,
+    .header_number-gps>div>a:nth-child(2) {
+        display: none;
+    }
+
+    header > div{
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header_number-gps{
+        padding-left: 8rem;
+    }
+/* ================== */
+
+/* ================== */
+    .first-section_text{
+        font-size: 1.1rem;
+        width: 50%;
+    }
+    .first-section_text p{
+        font-size: 2.25rem;
+    }
+    .first-section_text > div{
+        margin-top: 1rem;
+    }
+
+    .first-section_verifed{
+        grid-template-columns: 1fr;
+    }
+    .first-section_verifed > div{
+        margin-bottom: 1rem;
+    }
+    .first-section > a > button{
+        height: 50px;
+    }
+
+    .first-section_image{
+        z-index: -1;
+    }
+    .first-section_image > img{
+        width: 40%;
+        transform: translate(30%, 75%);
+    }
+    .first-section_image > a{
+        display: none;
+    }
+/* ================== */
+
+/* ================== */
+    .section_footer{
+        font-size: 1em;
+        margin-top: 3rem;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section_footer > div{
+        display: block;
+        padding: 1rem 0 0 1.5rem;
+        width: 21.25rem;
+        height: 6.25rem;
+    }
+    .section_footer > div:last-child{
+        transform: translateX(-100%);
+    }
+    .section_footer > div:nth-child(3){
+        transform: translateX(100%);
+    }
+    .section_footer > div > img{
+        width: 40px;
+    }
+/* ================== */
+
+/* ================== */
+    .two-section_navigation{
+        width: 50%;
+        flex-wrap: wrap;
+
+    }
+    .two-section_image-room{
+        top: 55%;
+        right: -10%;
+    }
+/* ================== */
+
+/* ================== */
+    .Advantages-info > h2{
+        font-size: 2.25rem;
+    }
+    .Advantages-info > p{
+        font-size: 1.1rem;
+    }
+    .advantages{
+        grid-template-columns: repeat(2,170px);
+        grid-template-rows: repeat(3, 260px);
+    }
+    .block-adv{
+        width: 10rem;
+        height: 8.1rem;
+    }
+    .advantages_block > img{
+        padding: 1rem 0 0 .8rem;
+        width: 35%;
+    }
+    .advantages_block > h2{
+        flex-wrap: wrap;
+        padding: .5rem 0 0 .8rem;
+        font-size: .8rem;
+    }
+    .advantages_block p{
+        font-size: .8rem;
+        padding: .6rem 0 0 .8rem;
+    }
+    .block-adv:nth-child(2),
+    .block-adv:nth-child(6){
+        height: 15.6rem;
+    }
+    .block-adv:nth-child(4){
+        transform: translate(-106%, 30%);
+        height: 14rem;
+        background-color: #282B32;
+    }
+    .block-adv:nth-child(5){
+        transform: translate(106%, -166%);
+        height: 9.8rem;
+    }
+    .block-adv:nth-child(3){
+        transform: translate(0,-70%);
+        height: 10.8rem;
+        background-color: #202124;
+
+    }
+    .block-adv:nth-child(6){
+        transform: translateY(-35%);
+    }
+    .advantages-reservation{
+        top: 80%;
+        left: -60%;
+    }
+    .advantages-reservation img{
+        width: 15%;
+    }
+    .advantages-reservation button{
+        width: 200px;
+    }
+/* ================== */
+}
